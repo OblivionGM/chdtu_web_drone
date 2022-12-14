@@ -1,0 +1,31 @@
+// =========== Variables =========== //
+
+$primary: #FF8303;
+$secondary: #F0E3CA;
+$primaryDark: #A35709;
+$bgPrimary: #1B1A17;
+$bgSecondary: #1F1E1B;
+
+$canvasWidth: 1920;
+
+// =========== Mixins =========== //
+
+// Convert font-size to REM
+@function rem($px) {
+    $result: ($px / 16) + rem;
+    @return $result;
+}
+
+// Auto font-size from layout size to mobile
+@mixin adaptive-font($maxSize, $minSize) {
+    $addSize: $maxSize - $minSize;
+    $addMinSize: $addSize + $addSize * 0.7;
+
+    @media (max-width: 767px) {
+        font-size: calc(#{$minSize + px} + #{$addMinSize} * ((100vw - 320px) / #{$canvasWidth}));
+    }
+
+    @media (min-width: 767px) {
+        font-size: calc(#{$minSize + px} + #{$addSize} * (100vw / #{$layoutWidth}));
+    }
+}

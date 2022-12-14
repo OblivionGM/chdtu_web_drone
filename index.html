@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <title>Калькулятор мощности увлажнителя воздуха</title>
+</head>
+<body>
+
+    <div class="wrap">
+        <div class="conteiner">
+
+            <h1 class="title">Расчет расстояния к дрону</h1>
+            
+            <form class="form" action="#">
+
+                <div class="form__content">
+
+                    <div class="form__block">
+
+                        <h3 class="form__title">First Object</h3>
+                        
+                        <div class="form__item">
+                            <label class="form__label" for="square">X:</label>
+                            <input class="form__input" type="number" name="x1" id="x1">
+                        </div>
+
+                        <div class="form__item">
+                            <label class="form__label" for="square">Y:</label>
+                            <input class="form__input" type="number" name="y1" id="y1">
+                        </div>
+
+                        <div class="form__item">
+                            <label class="form__label" for="square">a:</label>
+                            <input class="form__input" type="number" name="a1" id="a1">
+                        </div>
+
+                    </div>
+
+                    <div class="form__block">
+
+                        <h3 class="form__title">Second Object</h3>
+
+                        <div class="form__item">
+                            <label class="form__label" for="square">X:</label>
+                            <input class="form__input" type="number" name="x2" id="x2">
+                        </div>
+
+                        <div class="form__item">
+                            <label class="form__label" for="square">Y:</label>
+                            <input class="form__input" type="number" name="y2" id="y2">
+                        </div>
+
+                        <div class="form__item">
+                            <label class="form__label" for="square">a:</label>
+                            <input class="form__input" type="number" name="a2" id="a2">
+                        </div>
+
+                    </div>
+
+                    <div class="form__block">
+                        <p class="form__result">Расстояние до дрона от первого объекта: <span class="form__result--big">00.00</span></p>
+                        <p class="form__result">Расстояние до дрона от второго объекта: <span class="form__result--big">00.00</span></p>
+                    </div>
+                </div>
+
+
+                <input class="form__submit" type="button" onclick="calcDistance()" value="Рассчитать">
+                <p class="form__desc">Расстояние до объекта определяеться триангуляцией, получая на вход данные о положении первого объекта (<span class="form__desc--sel">координата X, Y и угол по направлению к дрону a</span>) и второго объекта. Объектами в реальной жизни могут быть дерево, здание, памятник и в целом любой достижимый объект на земле. Длинна базовой линии <span class="form__desc--sel">с</span> высчитываеться элементарной формулой расчета расстояния между точками в пространстве, и зная углы теоремой синусов высчитываються стороны полученного треугольника, которые являються расстоянием до объекта (в нашем случае - дрона).</p>
+
+            </form>
+
+        </div>
+    </div>
+
+    <script src="/scripts/script.js"></script>
+</body>
+</html>
